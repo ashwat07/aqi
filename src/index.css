@@ -1,6 +1,6 @@
 :root {
-  --font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  --font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
   --background-color: #d8e9f3;
   --good-background: #bcfeb8;
   --good-color: #116a0b;
@@ -31,25 +31,6 @@ html {
 
 body {
   font-family: var(--font-family);
-  /* background-color: var(--background-color); */
   font-weight: 300;
   line-height: 1.6;
 }
-
-ul {
-  list-style: none;
-}
-
-li,
-button {
-  cursor: pointer;
-}
-
-/* body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: ;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */

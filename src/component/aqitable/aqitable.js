@@ -37,9 +37,9 @@ export default function AqiTable(props) {
   }));
 
   return (
-    <div className="aqitable">
+    <div>
       <h1>Comparison</h1>
-      <Table dataSource={modifiedData} columns={columns} />
+      <Table dataSource={modifiedData} columns={columns} pagination={false} />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 function AQILineChart(props) {
   const { cityName, data } = props;
   return (
-    <div className="center">
+    <div className="center mg-3">
       <h1>{cityName}</h1>
       <LineChart width={1200} height={500} data={data}>
         <Line type="monotone" dataKey="aqi" stroke="#8884d8" />

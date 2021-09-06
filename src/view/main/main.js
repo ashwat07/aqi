@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Spin } from "antd";
 
 import AQICard from "../../component/card/card";
-import getWsUrl from "../../config/socket";
 import Data from "../../config/data";
 import useForceUpdate from "../../hooks/useForceRender";
 import AqiTable from "../../component/aqitable/aqitable";
 import LineChart from "../../component/chart/chart";
+import constants from "../../config/constants";
 
 const data = new Data();
 
@@ -25,7 +25,7 @@ function Main() {
   };
 
   useEffect(() => {
-    const ws = new WebSocket(getWsUrl());
+    const ws = new WebSocket(constants.WS_URL);
 
     ws.onopen = () => {
       setIsConnected(true);
@@ -68,9 +68,7 @@ function Main() {
           );
         })}
       </div>
-
       <AqiTable tableData={tableData} />
-
       <LineChart data={data.getCityData(cityName)} cityName={cityName} />
     </div>
   );
