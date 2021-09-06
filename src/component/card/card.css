@@ -1,0 +1,74 @@
+.card {
+  border-radius: 30px;
+  width: 200px;
+  height: 175px;
+  font-size: 1.4rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card__good {
+  background-color: var(--good-background);
+  color: var(--good-color);
+}
+
+.card__satisfactory {
+  background-color: var(--satisfactory-background);
+  color: var(--satisfactory-color);
+}
+
+.card__moderate {
+  background-color: var(--moderate-background);
+  color: var(--moderate-color);
+}
+
+.card__poor {
+  background-color: var(--poor-background);
+  color: var(--poor-color);
+}
+
+.card__vpoor {
+  background-color: var(--vpoor-background);
+  color: var(--vpoor-color);
+}
+
+.card__severe {
+  background-color: var(--severe-background);
+  color: var(--severe-color);
+}
+
+.card > .ant-card-body {
+  height: inherit;
+  display: grid;
+  grid-template-rows: 40px 1fr 40px;
+}
+
+.card__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__title > .fas {
+  margin-right: 0.8rem;
+}
+
+.card__aqi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__aqi > p {
+  font-size: 5.5rem;
+}
+
+.card__time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__time > p:last-child {
+  font-style: italic;
+}

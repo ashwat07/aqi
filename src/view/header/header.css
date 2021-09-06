@@ -1,0 +1,29 @@
+.header {
+  -webkit-box-shadow: 0 3px 5px rgba(216, 233, 243, 1);
+  -moz-box-shadow: 0 3px 5px rgba(216, 233, 243, 1);
+  box-shadow: 0 3px 5px rgba(216, 233, 243, 1);
+  padding: 1.5rem;
+}
+
+.header__logo {
+  display: inline-block;
+  width: 500px;
+  height: 100%;
+}
+
+.header__logo > figure {
+  height: inherit;
+  width: 100%;
+  display: flex;
+}
+
+figcaption {
+  align-self: center;
+  margin-left: 1rem;
+  font-size: 2rem;
+}
+
+.header__logo > figure > img {
+  height: 100%;
+  width: 12%;
+}
