@@ -1,31 +1,25 @@
 import React from "react";
-import { Chart } from "react-google-charts";
+import { LineChart, Line, CartesianGrid, XAxis, YAxis } from "recharts";
+import PropTypes from "prop-types";
 
-function GeoChart() {
+function AQILineChart(props) {
+  const { cityName, data } = props;
   return (
-    <div>
-      <Chart
-        width={"500px"}
-        height={"300px"}
-        chartType="GeoChart"
-        data={[
-          ["City", "Air Quality Index"],
-          ["Mumbai", 128.8, 1285.31],
-          ["Bangalore", 192.2, 181.76],
-          ["Pune", 100, 117.27],
-        ]}
-        options={{
-          region: "IN",
-          displayMode: "",
-          colorAxis: { colors: ["green", "blue"] },
-        }}
-        // Note: you will need to get a mapsApiKey for your project.
-        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-        mapsApiKey="AIzaSyBxamFsA_NuxFZS3Y3cBIGwM5v2IUizPrY"
-        rootProps={{ "data-testid": "2" }}
-      />
+    <div className="center">
+      <h1>{cityName}</h1>
+      <LineChart width={1200} height={500} data={data}>
+        <Line type="monotone" dataKey="aqi" stroke="#8884d8" />
+        <CartesianGrid stroke="#ccc" />
+        <XAxis dataKey="name" />
+        <YAxis />
+      </LineChart>
     </div>
   );
 }
 
-export default GeoChart;
+AQILineChart.propTypes = {
+  cityName: PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired,
+};
+
+export default AQILineChart;

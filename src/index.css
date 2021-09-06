@@ -1,7 +1,6 @@
-/* @import "~antd/dist/antd.css"; */
-
 :root {
-  --font-family: "Rhodium Libre", serif;
+  --font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   --background-color: #d8e9f3;
   --good-background: #bcfeb8;
   --good-color: #116a0b;

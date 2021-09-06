@@ -5,21 +5,21 @@ import AQICard from "../../component/card/card";
 import getWsUrl from "../../config/socket";
 import Data from "../../config/data";
 import useForceUpdate from "../../hooks/useForceRender";
-import "./main.css";
-// import Chart from "../../component/chart/chart";
-import AqiTable from "./aqitable";
-import "antd/lib/spin/style/index.css";
+import AqiTable from "../../component/aqitable/aqitable";
+import LineChart from "../../component/chart/chart";
 
 const data = new Data();
 
 function Main() {
   const [isConnected, setIsConnected] = useState(false);
   const [tableData, setTableData] = useState([]);
+  const [cityName, setCityName] = useState("");
   const forceUpdate = useForceUpdate();
 
   const message = (messages) => {
     messages.forEach((message) => {
       data.pushItem(message);
+      data.pushCityData(message);
       forceUpdate();
     });
   };
@@ -44,7 +44,9 @@ function Main() {
   }, []);
 
   const handleCardClick = (item) => {
-    setTableData([...tableData, item]);
+    const isCityExist = tableData.some((data) => data.city === item.city);
+    if (!isCityExist) setTableData([...tableData, item]);
+    setCityName(item.city);
   };
 
   if (!isConnected) {
@@ -66,7 +68,10 @@ function Main() {
           );
         })}
       </div>
+
       <AqiTable tableData={tableData} />
+
+      <LineChart data={data.getCityData(cityName)} cityName={cityName} />
     </div>
   );
 }

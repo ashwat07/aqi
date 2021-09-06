@@ -3,6 +3,7 @@ import moment from "moment";
 class Data {
   constructor() {
     this.data = {};
+    this.singleCityData = {};
   }
 
   pushItem(item) {
@@ -19,12 +20,20 @@ class Data {
     this.data[item.city].updatedAt = moment().fromNow();
   }
 
+  pushCityData(item) {
+    if (!this.singleCityData[item.city]) {
+      this.singleCityData[item.city] = [{ aqi: item.aqi }];
+    } else {
+      this.singleCityData[item.city].push({ aqi: item.aqi });
+    }
+  }
+
   getData() {
     return this.data;
   }
 
   getCityData(city) {
-    return this.data[city];
+    return this.singleCityData[city];
   }
 }
 

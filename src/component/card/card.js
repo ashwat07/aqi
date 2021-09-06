@@ -1,8 +1,8 @@
 import React from "react";
 import { Card } from "antd";
 import PropTypes from "prop-types";
-import "./card.css";
 import range from "../../config/range";
+import "./card.css";
 
 function AQICard(props) {
   const { city, aqi, updatedAt } = props;
